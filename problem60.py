@@ -1,4 +1,14 @@
-from itertools import count, islice, combinations, chain
+"""
+The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes 
+and concatenating them in any order the result will always be prime. For example, 
+taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, 
+represents the lowest sum for a set of four primes with this property.
+
+Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
+
+"""
+
+from itertools import count, islice
 from math import sqrt
 import random
 
@@ -50,19 +60,6 @@ def final_primes(primes):
                     for e in primes:
                       if gen_primes(a, e) and gen_primes(b, e) and gen_primes(c, e) and gen_primes(d, e):
                         return a + b + c + d + e
-
-  # concat_prime = []
-  # combination = combinations(primes, 5)
-  # all_primes = []
-  # for i, c in enumerate(combination):
-  #   for com in combinations(c,2):
-  #     concat = int(str(com[0]) + str(com[1]))
-  #     isPrime1 = prime(concat)
-  #     concat_prime.append(isPrime1)
-      
-  #   if not False in concat_prime:
-  #     all_primes.append(c)
-  # return all_primes  
 
 if __name__ == "__main__":
   primes = main()
